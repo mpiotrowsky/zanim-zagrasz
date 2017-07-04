@@ -1,0 +1,55 @@
+<% include ../partials/header %>
+<div class="row">
+  <div class="col-md-3">
+    <p class="lead text-center">Miejsce na reklamę</p>
+    <div class="list-group">
+      <li class="list-group-item">Tu może znajdować się Twoja reklama.</li>
+    </div>
+  </div>
+  <div class="col-md-9">
+    <div class="thumbnail">
+      <img class="img-responsive" src="<%= game.image %>">
+      <div class="caption-full">
+        <h4><a><%=game.name%></a></h4>
+        <p><%= game.description %></p>
+        <p>
+          <em>Utworzone przez: <%= game.author.username %>, <%= moment(game.createdAt).fromNow() %></em>
+        </p>
+        <% if(currentUser && game.author.id.equals(currentUser._id)){ %>
+        <a class="btn btn-warning" href="/games/<%= game._id %>/edit">Edytuj</a>
+        <form action="/games/<%= game._id %>?_method=DELETE" method="POST" class="delete-form">
+          <button class="btn btn-danger">Usuń</button>
+        </form>
+        <% } %>
+      </div>
+    </div>
+    <div class="well">
+      <div class="text-right">
+        <a class="btn btn-primary" href="/games/<%= game._id %>/comments/new">Dodaj nową poradę</a>
+      </div>
+      <hr>
+      <% game.comments.forEach(function(comment){ %>
+      <div class="row">
+        <div class="col-md-12">
+          <strong><%= comment.author.username %></strong>
+          <span class="pull-right"><%= moment(comment.createdAt).fromNow() %></span>
+          <div>
+           <%= comment.text %> 
+
+           <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+            <div class="pull-right">
+              <a href="/games/<%=game._id%>/comments/<%=comment._id%>/edit" class="btn btn-xs btn-warning">Edytuj</a>
+              <form class="delete-form" action="/games/<%=game._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST">
+                <button class="btn btn-xs btn-danger">Usuń</button>
+              </form>
+            </div>
+          <% } %>
+          <hr>
+        </div>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+</div>
+</div>
+<% include ../partials/footer %>

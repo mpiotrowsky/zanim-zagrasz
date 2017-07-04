@@ -1,0 +1,35 @@
+<% include ../partials/header %> 
+
+     <header class="container">
+         <div class="text-center">
+             <h1><span class="fa fa-gamepad" aria-hidden="true"></span> Katalog gier</h1>
+             <p>
+                <a class="btn btn-primary btn-lg" href="/games/new">Dodaj nową grę</a>
+             </p>
+              <p>
+              <form action="/games" method="GET" class="form-inline" id="game-search">
+                <div class="form-group">
+                  <input type="text" name="search" placeholder="Wyszukaj grę..." class="form-control">
+                </div>
+              </form>
+             </p>
+         </div>
+     </header>
+     
+     <div class="row text-center flex-wrap" id="game-grid">
+        <% games.forEach(function(game){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                   <img src="<%= game.image %>">
+                   <div class="caption">
+                       <h4><%= game.name %></h4>
+                   </div>
+                   <p>
+                       <a href="/games/<%= game._id %>" class="btn btn-primary">Więcej</a>
+                   </p>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+
+<% include ../partials/footer %>
