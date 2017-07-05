@@ -4,13 +4,13 @@ body {
 }
 
 h1 {
-  font-size: 5em;
+  font-size: 4em;
   text-shadow: 2px 2px 10px black;
   color: #FFFFFC;
 }
 
 h2 {
-  font-size: 4em;
+  font-size: 3em;
   text-shadow: 2px 2px 10px black;
   color: #FFFFFC;
   padding-bottom: 0.4em;
