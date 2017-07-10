@@ -93,6 +93,7 @@ body {
 
 .thumbnail {
     padding: 0;
+    border-radius: 0;
 }
 
 .thumbnail .caption-full {
@@ -106,4 +107,24 @@ body {
 .flex-wrap {
   display:flex;
   flex-wrap: wrap;
+}
+
+.btn-group-lg > .btn, .btn-lg {
+  border-radius: 0;
+}
+
+.list-group-item:first-child {
+  border-radius: 0;
+}
+
+.well {
+  border-radius: 0;
+}
+
+.btn {
+  border-radius: 0;
+}
+
+.form-control {
+  border-radius: 0;
 }

@@ -16,6 +16,10 @@ h2 {
   padding-bottom: 0.4em;
 }
 
+.btn-group-lg > .btn, .btn-lg {
+  border-radius: 0;
+}
+
 #landing-header {
   z-index: 1;
   position: relative;
