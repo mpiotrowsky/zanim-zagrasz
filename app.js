@@ -20,7 +20,7 @@ var commentRoutes    = require("./routes/comments"),
     gameRoutes = require("./routes/games"),
     indexRoutes      = require("./routes/index")
     
-mongoose.connect("mongodb://mpiotrov:qwerty215033@ds147052.mlab.com:47052/zanimzagrasz");
+mongoose.connect("mongodb://###################################");
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
