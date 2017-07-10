@@ -2,4 +2,4 @@
 
 Service with advices for gamers
 
-Based on yelpcamp from udemy bootcamp course by Colt Steele
+Based on yelpcamp from Udemy Web Developer Bootcamp by Colt Steele
